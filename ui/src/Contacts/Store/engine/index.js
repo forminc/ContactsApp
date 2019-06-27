@@ -1,22 +1,21 @@
 import createReducer from "../common/createReducer";
 
 var reducers = {
-  GO_TO: (state, action) => {
-    switch(action.pageId){
-      case "SPLASH":return {
-        pageId:action.pageId,
-        currentData:{},
+  SET_PROPERTY: (state, action) => {
+      return{
+        ...state,
+        applicationProperties:{
+          ...state.applicationProperties,
+          [action.property]:action.value
+        }
       }
-      default: return state;
-    }
-    return { ...state, pageId: action.pageId};
   }
 };
 
 const initialState = {
   pageId: "",
   currentData: {},
-  menuItems: []
+  applicationProperties:{}
 };
 
 export default createReducer(initialState, reducers);

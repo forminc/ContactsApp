@@ -45,7 +45,6 @@ function getPageWiseFields(fields){
     }
     pageWiseFields[noOfPages] = pageWiseFields[noOfPages] ? pageWiseFields[noOfPages].concat(fields[index]): [fields[index]] ;
   });
-  debugger;
   return pageWiseFields;
 }
 function Form(props) {

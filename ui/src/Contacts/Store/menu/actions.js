@@ -6,6 +6,13 @@ export const setMenuItems=(menuItems)=>{
     }
 }
 
+export const showMenu=()=>{
+    return{
+        type:"SHOW_MENU",
+        segmentName:"menu"
+    }
+}
+
 export const hideMenu=()=>{
     return{
         type:"HIDE_MENU",

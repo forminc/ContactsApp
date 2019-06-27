@@ -8,10 +8,15 @@ var reducers = {
       showMenu: !action.menuItems.length
     };
   },
+  SHOW_MENU: (state, action) => {
+    return {
+      ...state,
+      showMenu: true
+    };
+  },
   HIDE_MENU: (state, action) => {
     return {
       ...state,
-      menuItems: [],
       showMenu: false
     };
   }
