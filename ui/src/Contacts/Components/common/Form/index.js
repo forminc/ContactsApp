@@ -11,6 +11,9 @@ import { FormScreenContainer, FormContainer } from "./styles";
 import {Context} from '../../../Store'
 import {alert} from '../../../Store/alert/actions'
 function getResidualHeight() {
+  console.log("HEader hieght=",candidHeaderConstants.getHeaderHeight());
+  console.log("Paginator height="+paginatorConstants.getPaginatorHeight());
+  console.log("button height="+formSubmitConstants.getSubmitHeight());
   return (
     candidHeaderConstants.getHeaderHeight() +
     paginatorConstants.getPaginatorHeight() +
@@ -38,11 +41,11 @@ function getPageWiseFields(fields){
   let cumulativeHeight = 0;
   let heightsArray=getFieldSectionHeight(fields);
   heightsArray.forEach((height, index) => {
-    cumulativeHeight = cumulativeHeight + height;
-    if (cumulativeHeight > formSpace) {
+    if (height > formSpace-cumulativeHeight) {
       noOfPages = noOfPages + 1;
       cumulativeHeight = 0;
     }
+    cumulativeHeight = cumulativeHeight + height;
     pageWiseFields[noOfPages] = pageWiseFields[noOfPages] ? pageWiseFields[noOfPages].concat(fields[index]): [fields[index]] ;
   });
   return pageWiseFields;

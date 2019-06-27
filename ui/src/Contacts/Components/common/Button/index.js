@@ -3,7 +3,7 @@ import {ButtonContainer} from './styles';
 function Button(props){
     return (
         <ButtonContainer onClick={props.onClick}>
-            {props.text}
+            <span>{props.text}</span>
         </ButtonContainer>
     )
 }
