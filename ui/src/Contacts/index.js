@@ -1,18 +1,19 @@
-import React from "react";
+import React,{useContext} from "react";
 import { ContactAppContainer } from "./styles";
 import Menubar from "./Components/Menubar";
 import AppContainer from "./Components/AppContainer";
-import { Provider } from "./Store";
 import Alert from "./Components/Alert";
+import {Context} from './Store';
 function ContactApp() {
+  const {state} = useContext(Context);
   return (
-    <Provider>
-        <ContactAppContainer>
+    <React.Fragment>
+        <ContactAppContainer blur={state.alert.showAlert}>
           <Menubar />
           <AppContainer />
         </ContactAppContainer>
         <Alert/>
-    </Provider>
+    </React.Fragment>
   );
 }
 

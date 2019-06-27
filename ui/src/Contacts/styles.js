@@ -10,4 +10,6 @@ export const ContactAppContainer = styled.div`
   justify-content: center;
   color:${colors.fontColor1};
   font-family: 'Quicksand', sans-serif;
+  ${props=> props.blur ? "filter:blur(10px); transform:scale(1.01)" : ""};
+  transform:all 0.2s;
 `;

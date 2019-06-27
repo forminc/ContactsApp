@@ -1,9 +1,12 @@
-import React from 'react';
-import ContactApp from './Contacts';
+import React from "react";
+import ContactApp from "./Contacts";
+import { Provider } from "./Contacts/Store";
 
 function App() {
   return (
-    <ContactApp/>
+    <Provider>
+      <ContactApp />
+    </Provider>
   );
 }
 
