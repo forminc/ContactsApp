@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import formConstants from "./constants";
 import candidHeaderConstants from "../CandidHeader/constants";
 import formSubmitConstants from "./FormSubmitButton/constants";
@@ -8,7 +8,8 @@ import FormInputGroup from "./FormInputGroup";
 import FormPaginator from "./FormPaginator";
 import FormSubmitButton from "./FormSubmitButton";
 import { FormScreenContainer, FormContainer } from "./styles";
-
+import {Context} from '../../../Store'
+import {alert} from '../../../Store/alert/actions'
 function getResidualHeight() {
   return (
     candidHeaderConstants.getHeaderHeight() +
@@ -48,7 +49,7 @@ function getPageWiseFields(fields){
 }
 function Form(props) {
   const [pageNumber, setPageNumber] = useState(1);
- 
+  const {dispatch} = useContext(Context);
   let pageWiseFields=getPageWiseFields(props.config.fields);
   let noOfPages=Object.keys(pageWiseFields).length;
   function setData(field, value) {
@@ -64,7 +65,7 @@ function Form(props) {
       props.onSubmit();
     }
     else{
-      alert("Not Filled Data");
+      dispatch(alert("All fields need to be filled to continue"));
     }
   }
   return (
