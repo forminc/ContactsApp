@@ -15,7 +15,9 @@ function PinInput(props){
     let pin=props.pin;
     let extraSpace=" ".repeat(4-pin.split("").length)
     pin=pin.concat(extraSpace)
+
     
+
     return(<PinInputContainer>
         {
             pin.split("").map((e)=>{

@@ -1,10 +1,10 @@
 import React from 'react';
 import {AppBodyContainer} from './styles';
-import TestScreen from '../Screens/Test';
+import SplashScreen from '../Screens/Splash';
 function AppContainer(){
     return (
         <AppBodyContainer>
-            <TestScreen/>
+            <SplashScreen/>
         </AppBodyContainer>
     )
 }

@@ -10,7 +10,8 @@ export const PinBoxEmpty = styled.div`
   height:30px;
   width:20px;
   margin: 20px;
-  margin-bottom-style: solid;
+  border-bottom-style: solid;
+  border-bottom-width:1px;
 `;
 
 export const PinBoxFull = styled(PinBoxEmpty)`
