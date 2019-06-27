@@ -57,10 +57,19 @@ function Form(props) {
       [field]: value
     });
   }
-  debugger;
+  function callOnSubmit(){
+    if(props.config.fields.every((field)=>{
+      return props.data[field.key]!==undefined
+    })){
+      props.onSubmit();
+    }
+    else{
+      alert("Not Filled Data");
+    }
+  }
   return (
     <FormScreenContainer>
-      <Header>Form Heading</Header>
+      <Header>{props.heading}</Header>
       <FormContainer>
         <FormInputGroup
           data={props.data}
@@ -72,7 +81,7 @@ function Form(props) {
           setPageNumber={setPageNumber}
           noOfPages={noOfPages}
         />
-        <FormSubmitButton />
+        <FormSubmitButton onClick={callOnSubmit}/>
       </FormContainer>
     </FormScreenContainer>
   );

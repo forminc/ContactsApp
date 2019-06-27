@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from '../../Button';
 import {FormSubmitButtonContainer} from './styles';
-function FormSubmitButton(){
+function FormSubmitButton(props){
     return(<FormSubmitButtonContainer>
-        <Button text={"Submit"}/>
+        <Button text={"Submit"} onClick={props.onClick}/>
     </FormSubmitButtonContainer>)
 }
 

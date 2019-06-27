@@ -21,10 +21,11 @@ function FormPaginator(props) {
           .map(index => index + 1)
           .map(pageNumber => {
             if (pageNumber === props.pageNumber) {
-              return <ActivePaginatorButton />;
+              return <ActivePaginatorButton key={"form-paginator-"+pageNumber}/>;
             } else {
               return (
                 <PaginatorButton
+                  key={"form-paginator-"+pageNumber}
                   onClick={() => {
                     props.setPageNumber(pageNumber);
                   }}

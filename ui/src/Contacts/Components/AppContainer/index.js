@@ -1,10 +1,10 @@
 import React from 'react';
 import {AppBodyContainer} from './styles';
-import FormSampleScreen from '../Screens/FormSample';
+import ContactsRouter from '../../Routes';
 function AppContainer(){
     return (
         <AppBodyContainer>
-            <FormSampleScreen/>
+            <ContactsRouter/>
         </AppBodyContainer>
     )
 }
